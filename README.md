@@ -1,8 +1,6 @@
 # Emoji Match 🎉
 
-**Meet Emoji Match, a game where you battle your opponent using emojis to come as close as possible to 15 emoji points, without going over.**
-
-Each emoji is assigned a value, and your score is then calculated as the sum of your emojis’ values. If you end the game with a higher score than your opponent — the computer — without surpassing 15 points, you win! 🥳
+**Meet Emoji Match, a game where you battle your opponent using emojis to come as close as possible to 15 emoji points, without going over.** Each emoji is assigned a value, and your score is then calculated as the sum of your emojis’ values. If you end the game with a higher score than your opponent — the computer — without surpassing 15 points, you win! 🥳
 
 ### Emoji Value Key
 - 📎: 1
