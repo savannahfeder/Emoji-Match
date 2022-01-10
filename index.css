@@ -1,0 +1,79 @@
+body {
+    background-color: #ffdc84;
+    color: white;
+    font-family: Baloo;
+    
+}
+
+p, h1, h2, h3 {
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 1px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#my-emoji-container {
+    text-align: center;
+}
+
+
+#opponent-emoji-container {
+    text-align: center;
+}
+
+#my-emoji-container span, #opponent-emoji-container span {
+    font-size: 60px;
+}
+
+/*TEMPORARY - change after JavaScript that targets span*/
+span {
+    margin: 0;
+}
+
+button {
+    font-family: Baloo;
+    letter-spacing: px;
+    background: darkcyan;
+    color: white;
+    border: none;
+    font-size: 17px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin: 15px 4px;
+    cursor: pointer;
+}
+
+div {
+    text-align: center;
+}
+
+#add-emoji-btn {
+    background-color: rgb(128, 203, 15);
+}
+
+#submit-game-btn {
+    background-color: red;
+}
+
+#add-emoji-btn:hover, #submit-game-btn:hover {
+    background-color:cornflowerblue
+}
+
+#score {
+    text-align: center;
+}
+
+#opponent-score {
+    text-align: center;
+}
