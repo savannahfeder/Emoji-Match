@@ -13,4 +13,4 @@
 - 🏠: 15
 
 ### Your Opponent
-When you're satisfied with your emojis and hit the **Submit Game** button, the computer will then randomly generates between one and three emojis that you are to compete against for the highest score. It works by generating new emojis until the number of emojis has reached three or the next generated emoji would put the computer above the 15 point limit.
+When you're satisfied with your emojis and hit the **Submit Game** button, the computer will then randomly generate between one and three emojis that you are to compete against for the highest score. It works by generating new emojis until the number of emojis has reached three or the next generated emoji would put the computer above the 15 point limit.
