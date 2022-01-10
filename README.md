@@ -1,4 +1,4 @@
-# Emoji-Match 🎉
+# Emoji Match 🎉
 
 **Meet Emoji Match, a game where you battle your opponent using emojis to come the closest to reaching 15 emoji points, without going over.**
 
