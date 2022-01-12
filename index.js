@@ -5,8 +5,27 @@ let myPoints = 0;
 let opponentPoints = 0;
 const limit = 15;
 
+const resetGameBtn = document.getElementById("reset-game-btn");
+const addEmojiBtn = document.getElementById("add-emoji-btn");
+
+//TODO: fix reset button reload
+
+//On page load
+document.addEventListener("DOMContentLoaded", function() {
+    resetGameBtn.style.display = "none"; 
+})
+
+//Reset Game button
+resetGameBtn.addEventListener("click", function() {
+    window.location.reload();
+    resetGameBtn.style.display = "none"; 
+})
+
+
+
 //Add Emoji button
-document.getElementById("add-emoji-btn").addEventListener("click", function() {
+addEmojiBtn.addEventListener("click", function() {
+    //resetGameBtn.style.display = none;
     let newEmoji = randomEmoji()
     myEmojis.push(newEmoji);
     myPoints += returnEmojiValue(newEmoji);
@@ -63,7 +82,8 @@ function isBust() {
 }
 
 //Submit Game button
-document.getElementById("submit-game-btn").addEventListener("click", function() {
+const submitGameBtn = document.getElementById("submit-game-btn");
+submitGameBtn.addEventListener("click", function() {
     generateOpponentEmojis();
     renderOpponentEmojis();
     renderOpponentScore();
@@ -80,7 +100,8 @@ function calculateWinner() {
         winnerMessage.innerHTML = `<span>Congratulations, you won!</span>`
     } else {
         winnerMessage.innerHTML = `<span>Looks like a tie. Participation medals all around!</span>`
-    }
+    } 
+    resetGameBtn.style.display = "inline-block";
 }
 
 function renderOpponentScore() {

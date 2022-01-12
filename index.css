@@ -66,8 +66,8 @@ div {
     background-color: red;
 }
 
-#add-emoji-btn:hover, #submit-game-btn:hover {
-    background-color:cornflowerblue
+#add-emoji-btn:hover, #submit-game-btn:hover, #reset-game-btn:hover {
+    background-color:cornflowerblue;
 }
 
 #score {
@@ -75,5 +75,9 @@ div {
 }
 
 #opponent-score {
+    text-align: center;
+}
+
+#reset-game-btn {
     text-align: center;
 }
