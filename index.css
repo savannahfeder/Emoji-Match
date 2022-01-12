@@ -80,4 +80,5 @@ div {
 
 #reset-game-btn {
     text-align: center;
+    display: none;
 }
