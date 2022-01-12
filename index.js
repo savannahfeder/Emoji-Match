@@ -7,25 +7,21 @@ const limit = 15;
 
 const resetGameBtn = document.getElementById("reset-game-btn");
 const addEmojiBtn = document.getElementById("add-emoji-btn");
-
-//TODO: fix reset button reload
+const myPointsElement = document.getElementById("my-score");
+const emojiContainer = document.getElementById("my-emoji-container");
+const submitGameBtn = document.getElementById("submit-game-btn");
+const opponentScoreElement = document.getElementById("opponent-score");
+const opponentEmojiElement = document.getElementById("opponent-emoji-container");
+const winnerMessage = document.getElementById("winner-message");
 
 //On page load
 document.addEventListener("DOMContentLoaded", function() {
     resetGameBtn.style.display = "none"; 
 })
 
-//Reset Game button
-resetGameBtn.addEventListener("click", function() {
-    window.location.reload();
-    resetGameBtn.style.display = "none"; 
-})
-
-
 
 //Add Emoji button
 addEmojiBtn.addEventListener("click", function() {
-    //resetGameBtn.style.display = none;
     let newEmoji = randomEmoji()
     myEmojis.push(newEmoji);
     myPoints += returnEmojiValue(newEmoji);
@@ -37,12 +33,10 @@ addEmojiBtn.addEventListener("click", function() {
 })
 
 function renderPoints() {
-    const myPointsElement = document.getElementById("my-score");
     myPointsElement.innerHTML = `<span>Points: ${myPoints}</span>`;
 }
 
 function renderMyEmojis() {
-    const emojiContainer = document.getElementById("my-emoji-container");
     emojiContainer.innerHTML = "";
     for (let i = 0; i < myEmojis.length; i++) {
         emojiContainer.innerHTML += `<span>${myEmojis[i]}</span>`
@@ -82,18 +76,16 @@ function isBust() {
 }
 
 //Submit Game button
-const submitGameBtn = document.getElementById("submit-game-btn");
 submitGameBtn.addEventListener("click", function() {
     generateOpponentEmojis();
     renderOpponentEmojis();
     renderOpponentScore();
     calculateWinner();
-    document.getElementById("add-emoji-btn").disabled = true;
-    document.getElementById("submit-game-btn").disabled = true;
+    addEmojiBtn.disabled = true;
+    submitGameBtn.disabled = true;
 }) 
 
 function calculateWinner() {
-    const winnerMessage = document.getElementById("winner-message");
     if (myPoints > 15 || myPoints < opponentPoints) {
         winnerMessage.innerHTML = `<span>Oh no, you lost!</span>`
     } else if (myPoints > opponentPoints) {
@@ -105,7 +97,6 @@ function calculateWinner() {
 }
 
 function renderOpponentScore() {
-    const opponentScoreElement = document.getElementById("opponent-score");
     opponentScoreElement.innerHTML = "";
     opponentScoreElement.innerHTML = `<span>Points: ${opponentPoints}</span>`
 }
@@ -122,9 +113,28 @@ function generateOpponentEmojis() {
 }
 
 function renderOpponentEmojis() {
-    const opponentEmojiElement = document.getElementById("opponent-emoji-container");
     opponentEmojiElement.innerHTML = "";
     for (let i = 0; i < opponentEmojis.length; i++) { 
         opponentEmojiElement.innerHTML += `<span>${opponentEmojis[i]}</span>`
     }
+}
+
+//Reset Game button
+resetGameBtn.addEventListener("click", function() {
+    reset();
+})
+
+function reset() {
+    emojiContainer.innerHTML = `<span>🗑️</span>`;
+    myPoints = 0;
+    opponentPoints = 0;
+    myEmojis = [];
+    opponentEmojis = [];
+    myPointsElement.innerHTML = `<span>Points: 0</span>`
+    opponentScoreElement.innerHTML = `<span>Points: ?</span>`;
+    opponentEmojiElement.innerHTML = `<span>❓❓❓</span>`;
+    addEmojiBtn.disabled = false;
+    submitGameBtn.disabled = false;
+    winnerMessage.innerText = "";
+    resetGameBtn.style.display = "none"; 
 }
